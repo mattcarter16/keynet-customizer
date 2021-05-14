@@ -1,0 +1,36 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.links {
+    background-color: $ms-color-neutralLighter;
+    color: $ms-color-neutralPrimary;
+    transition: height 0.5s;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+  
+    .content {
+      padding: 20px;
+    }
+  
+    &.visible {
+      height: auto;
+    }
+  
+    &.hidden {
+      height: 0;
+    }
+
+    .image {
+      width: 90px;
+      height: auto;
+    }
+
+    .groupTitle {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 0 10px 5px;
+      color: #255b62;
+      text-transform: uppercase;
+    }
+  
+  }
