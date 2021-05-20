@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <CustomAction
-        Title="Footer"
+        Title="BKDApplicationCustomizer"
         Location="ClientSideExtension.ApplicationCustomizer"
         ClientSideComponentId="732f79d5-b192-4dd7-94b8-a721fb187454"
         ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">

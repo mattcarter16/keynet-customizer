@@ -6,24 +6,24 @@ import {
   BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
 } from '@microsoft/sp-application-base';
 
-import * as strings from 'FooterApplicationCustomizerStrings';
+import * as strings from 'BKDApplicationCustomizerStrings';
 import Footer from './components/Footer';
 import { sp } from "@pnp/sp/presets/all";
 
-const LOG_SOURCE: string = 'FooterApplicationCustomizer';
+const LOG_SOURCE: string = 'BKDApplicationCustomizer';
 
-export interface IFooterApplicationCustomizerProperties {
+export interface IBKDApplicationCustomizerProperties {
   // This is an example; replace with your own property
   testMessage: string;
 }
 
-export default class FooterApplicationCustomizer
-  extends BaseApplicationCustomizer<IFooterApplicationCustomizerProperties> {
+export default class BKDApplicationCustomizer
+  extends BaseApplicationCustomizer<IBKDApplicationCustomizerProperties> {
 
     private _bottomPlaceholder?: PlaceholderContent;
 
     private _handleDispose(): void {
-      console.log('[FooterApplicationCustomizer._onDispose] Disposed custom bottom placeholder.');
+      console.log('[BKDApplicationCustomizer._onDispose] Disposed custom bottom placeholder.');
     }
 
   @override
@@ -34,7 +34,7 @@ export default class FooterApplicationCustomizer
     });
 
     // inject custom css file to manage hub navigation colors
-    const cssUrl: string = "https://aptitude4dev.sharepoint.com/sites/HubSite/Shared%20Documents/keynet.css";
+    const cssUrl: string = "https://bkdllp.sharepoint.com/SiteAssets/BKDApplicationCustomizer/BKDApplicationCustomizer.css";
 
     if (cssUrl) {
       const head: any = document.getElementsByTagName("head")[0] || document.documentElement;

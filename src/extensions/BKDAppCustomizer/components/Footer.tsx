@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from './Footer.module.scss';
 import { DefaultButton, Label, Stack } from '@fluentui/react';
-import * as strings from 'FooterApplicationCustomizerStrings';
+import * as strings from 'BKDApplicationCustomizerStrings';
 import Links from './Links/Links';
-import { sp } from '@pnp/sp/presets/all';
+import { Web } from '@pnp/sp/presets/all';
 import { ILinkGroup } from './Links/ILinksProps';
 
 const Footer = () => {
@@ -23,9 +23,13 @@ const Footer = () => {
     const _getLinks = async () => {
         setLoadingLinks(true);
         let result: ILinkGroup[] = [];
+        
 
         try {
-            let items = await sp.web.lists.getByTitle('ControlledLinks').items
+            // update this address to the site of the ControlledLinks list 
+            let _web = await Web('https://bkdllp.sharepoint.com');
+            // update 'ControlledLinks' to the list you are using
+            let items = await _web.lists.getByTitle('BKDLinks').items
                 .filter("Active eq 1")
                 .orderBy('GroupOrder')
                 .orderBy('Weight')

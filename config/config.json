@@ -2,17 +2,17 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
-    "footer-application-customizer": {
+    "bkd-application-customizer": {
       "components": [
         {
-          "entrypoint": "./lib/extensions/footer/FooterApplicationCustomizer.js",
-          "manifest": "./src/extensions/footer/FooterApplicationCustomizer.manifest.json"
+          "entrypoint": "./lib/extensions/BKDAppCustomizer/BKDApplicationCustomizer.js",
+          "manifest": "./src/extensions/BKDAppCustomizer/BKDApplicationCustomizer.manifest.json"
         }
       ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "FooterApplicationCustomizerStrings": "lib/extensions/footer/loc/{locale}.js"
+    "BKDApplicationCustomizerStrings": "lib/extensions/BKDAppCustomizer/loc/{locale}.js"
   }
 }

@@ -1,6 +1,6 @@
 define([], function() {
   return {
-    "Title": "FooterApplicationCustomizer",
+    "Title": "BKDApplicationCustomizer",
     "ToggleButtonOpen": "Open",
     "ToggleButtonClose": "Close",
   }
