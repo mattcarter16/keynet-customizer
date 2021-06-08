@@ -34,7 +34,7 @@ export default class BKDApplicationCustomizer
     });
 
     // inject custom css file to manage hub navigation colors
-    const cssUrl: string = "https://bkdllp.sharepoint.com/SiteAssets/BKDApplicationCustomizer/BKDApplicationCustomizer.css";
+    const cssUrl: string = "https://aptitude4dev.sharepoint.com/sites/HubSite/Shared%20Documents/keynet.css";
 
     if (cssUrl) {
       const head: any = document.getElementsByTagName("head")[0] || document.documentElement;

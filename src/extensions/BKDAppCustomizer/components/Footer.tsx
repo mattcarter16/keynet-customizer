@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from './Footer.module.scss';
-import { DefaultButton, Label, Stack } from '@fluentui/react';
+import { DefaultButton, IconButton, IIconProps, Label, Stack } from '@fluentui/react';
 import * as strings from 'BKDApplicationCustomizerStrings';
 import Links from './Links/Links';
 import { Web } from '@pnp/sp/presets/all';
@@ -8,6 +8,7 @@ import { ILinkGroup } from './Links/ILinksProps';
 
 const Footer = () => {
 
+    const helpIcon: IIconProps = {iconName: "Unknown"};
     const [expanded, setExpanded] = React.useState(false);
     const [toggleButtonIconName, setToggleButtonIconName] = React.useState('ChevronUp');
     const [links, setLinks] = React.useState([]);
@@ -27,9 +28,9 @@ const Footer = () => {
 
         try {
             // update this address to the site of the ControlledLinks list 
-            let _web = await Web('https://bkdllp.sharepoint.com');
+            let _web = await Web('https://aptitude4dev.sharepoint.com/sites/HubSite');
             // update 'ControlledLinks' to the list you are using
-            let items = await _web.lists.getByTitle('BKDLinks').items
+            let items = await _web.lists.getByTitle('ControlledLinks').items
                 .filter("Active eq 1")
                 .orderBy('GroupOrder')
                 .orderBy('Weight')
@@ -92,6 +93,9 @@ const Footer = () => {
                         <div>
                             <Label className={styles.label}>BKD LINKS</Label>
                         </div>
+                    </Stack.Item>
+                    <Stack.Item>
+                        <IconButton iconProps={helpIcon}></IconButton>
                     </Stack.Item>
                 </Stack>
             </div>
